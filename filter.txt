@@ -1,0 +1,9 @@
+[0:v]scale=1080:1920:flags=lanczos,setsar=1,fps=30[v0];
+[v0]drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='DAY 1':fontsize=170:fontcolor=white:borderw=6:bordercolor=black:x=(w-text_w)/2:y=700:enable='between(t,0,2)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='i built a tiny game':fontsize=58:fontcolor=white:borderw=4:bordercolor=black:x=(w-text_w)/2:y=920:enable='between(t,0,2)'[v1];
+[v1]drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='7 DAYS LATER...':fontsize=84:fontcolor=white:borderw=5:bordercolor=black:x=(w-text_w)/2:y=850:enable='between(t,7,8)'[v2];
+[v2]drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='DAY 7':fontsize=170:fontcolor=white:borderw=6:bordercolor=black:x=(w-text_w)/2:y=700:enable='between(t,8,10)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='same game. same start.':fontsize=58:fontcolor=white:borderw=4:bordercolor=black:x=(w-text_w)/2:y=920:enable='between(t,8,10)'[v3];
+[v3]drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='7 days of daily updates':fontsize=54:fontcolor=white:borderw=4:bordercolor=black:box=1:boxcolor=black@0.45:boxborderw=24:x=(w-text_w)/2:y=1580:enable='between(t,16,21.5)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf:text='start yours at make.fun':fontsize=54:fontcolor=white:borderw=4:bordercolor=black:box=1:boxcolor=black@0.45:boxborderw=24:x=(w-text_w)/2:y=1680:enable='between(t,16,21.5)'[v4];
+[v4][1:v]overlay=0:0:enable='lt(t,21.5)'[game];
+[2:v]fps=30,format=yuv420p,drawbox=x=208:y=1230:w=9:h=82:color=white:enable='gte(t,1.433)',drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf:text='hgbjgrd6':fontsize=62:fontcolor=0x191419:x=210:y=1240:enable='gte(t,1.433)'[card];
+[game][card]concat=n=2:v=1:a=0[vout];
+[3:a]atrim=0:24,asetpts=PTS-STARTPTS[aout]
